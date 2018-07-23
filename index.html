@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <title>Buttons Sky</title>
+    <style>
+        body {
+            background-color: orange;
+        }
+        .btn-crazy {
+            position: absolute;
+            top: 30px;
+            left: 35%;
+            width: 30%;
+            transition: 0.5s ease all;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn btn-primary btn-crazy">Click Me!</button>
+    <button class="btn btn-danger btn-crazy">Click Me!</button>
+    <button class="btn btn-success btn-crazy">Click Me!</button>
+    <button class="btn btn-info btn-crazy">Click Me!</button>
+    <button class="btn btn-default btn-crazy">Click Me!</button>
+    
+    <script>
+        const buttons = document.querySelectorAll('.btn-crazy')
+
+        function goCrazy() {
+
+            const offsetLeft = Math.random() * (window.innerWidth - this.clientWidth);
+            const offsetTop = Math.random() * (window.innerHeight - this.clientHeight);
+
+            this.style.top = offsetTop + 'px';
+            this.style.left = offsetLeft + 'px';
+        }
+
+        buttons.forEach(button => button.addEventListener('mouseenter', goCrazy));
+
+
+    </script>
+</body>
+</html>
